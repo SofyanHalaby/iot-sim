@@ -67,3 +67,58 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+# IDE / editors
+.idea/
+.vscode/
+*.iml
+*.code-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+ENV/
+.python-version
+pip-wheel-metadata/
+dist/
+build-python/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.hypothesis/
+
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock.bak
+
+# Node (web dashboard / VS Code extension)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
