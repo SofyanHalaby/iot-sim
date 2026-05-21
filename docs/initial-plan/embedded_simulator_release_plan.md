@@ -36,7 +36,7 @@ Build a **modern, developer-friendly embedded systems simulator** that runs real
 
 | Layer | Choice | Rationale |
 |---|---|---|
-| CPU emulation | **Unicorn Engine** | LGPL, battle-tested, saves 6-12 months |
+| CPU emulation | **Unicorn Engine** | GPL-2.0, battle-tested, saves 6-12 months — license-isolated via subprocess (see [v0.1 ADR 0002](../v0.1/adrs/0002-cpu-backend-and-license-isolation.md)) |
 | Core language | **Rust** or **C++** | Performance for simulation loop |
 | API/Scripting | **Python** | Where developers will write tests |
 | First target MCU | **STM32F4 (Cortex-M4)** | Huge user base, well documented |
@@ -70,33 +70,11 @@ v0.1 ─ v0.2 ─ v0.3 ─ v0.4 ─ v0.5 ─── v1.0 ─── v1.5 ───
 
 ## 📦 Release v0.1 — "Hello World" (Months 1-3)
 
-**Goal:** Run a simple "blinky" firmware binary end-to-end.
+**Goal:** Run a simple "blinky" firmware binary end-to-end on a STM32F4-Discovery board model.
 
-### Epic 1: CPU Foundation
-- Integrate Unicorn Engine for ARM Cortex-M4
-- Memory regions: Flash (read-only), SRAM (read/write)
-- ELF file loader (parse and load firmware binary)
-- Reset vector handling
+The detailed plan — scope, technical design, sprint-by-sprint breakdown, repo layout, risks, and ADRs — lives in **[docs/v0.1/](../v0.1/README.md)**.
 
-### Epic 2: Minimum Peripherals
-- GPIO peripheral (input/output, pin state tracking)
-- SysTick timer (essential for any firmware loop)
-- Basic clock/RCC (just enough to enable peripherals)
-
-### Epic 3: Developer CLI
-- Command-line tool to load and run firmware
-- Print GPIO state changes to console
-- Stop/start/step controls
-
-### Acceptance Criteria
-- ✅ Load STM32F4 blinky.elf file
-- ✅ Observe GPIO pin toggling at expected frequency
-- ✅ Firmware runs for 10+ seconds without crashes
-
-### Risks
-- Unicorn Engine learning curve
-- ELF parsing edge cases
-- Clock timing accuracy
+At a glance: C++20 host, Unicorn Engine 2.x in a subprocess for GPL isolation, six 2-week sprints from project scaffolding through tagged v0.1.0 release. See [`docs/v0.1/README.md`](../v0.1/README.md) for the full plan.
 
 ---
 
