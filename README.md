@@ -14,7 +14,10 @@ iot-sim aims to close the gap between QEMU (powerful but complex) and commercial
 
 ## Status
 
-Early planning. No code yet. See [`docs/initial-plan/embedded_simulator_release_plan.md`](docs/initial-plan/embedded_simulator_release_plan.md) for the full agile release plan, scope per milestone, and roadmap from v0.1 (MVP) through v2.0 (enterprise & cloud).
+Early planning. No code yet.
+
+- **Active milestone:** v0.1 — boot a real STM32F4 `blinky.elf` end-to-end. See [`docs/v0.1/README.md`](docs/v0.1/README.md) for scope, technical design, sprints, ADRs, and risks.
+- **Full roadmap (v0.1 → v2.0):** [`docs/initial-plan/embedded_simulator_release_plan.md`](docs/initial-plan/embedded_simulator_release_plan.md).
 
 ## Target users
 
